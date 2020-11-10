@@ -1,0 +1,7 @@
+.projects-wrap {
+    padding: 20px;
+    display: flex;
+    height: 1000px;
+    justify-content: flex-start;
+    background-color: white;
+}
