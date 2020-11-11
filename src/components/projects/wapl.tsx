@@ -97,7 +97,7 @@ export const Wapl = () => {
             <ImageWrap>
                 <TheImage src={imgPaths[imgIndex].toString()} />
                 <ImgBtnWrap>
-                    {imgPaths.map((img, i) => {
+                    {imgPaths.map((_, i) => {
                         return <ImgBtn onClick={() => setImgIndex(i)}>{i + 1}</ImgBtn>;
                     })}
                 </ImgBtnWrap>
