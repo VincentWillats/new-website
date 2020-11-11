@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     background-color: #90c290;
+    opacity: 0.4;
     align-items: center;
     justify-content: flex-start;
     border: black;
@@ -9,9 +10,14 @@
     border-style: solid;
     /* padding: 10px; */
     position: fixed;
-    right: 150px;
-    top: 150px;
+    right: 5%;
+    top: 10%;
+    transition: all 0.3s;
 }
+.navbar:hover {
+    opacity: 1;
+}
+
 .btn {
     background-color: #688b58;
     text-align: center;
@@ -29,4 +35,12 @@
     color: black;
     box-shadow: 0 0 #666;
     transform: translate(3px, 3px);
+}
+
+/* media queries */
+@media only screen and (max-width: 600px) {
+    .navbar {
+        right: 1%;
+        top: 1%;
+    }
 }

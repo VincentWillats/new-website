@@ -18,7 +18,7 @@ function App() {
                         <MainScroll scrollTo={'contact'} />
                     </Route>
                     <Route path="/">
-                        <MainScroll scrollTo={'home'} />
+                        <MainScroll scrollTo={'about'} />
                     </Route>
                 </Switch>
             </div>

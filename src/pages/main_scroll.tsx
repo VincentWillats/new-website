@@ -1,6 +1,6 @@
 import React, { createRef, useEffect } from 'react';
 import { Contact } from './contact_page';
-import { Home } from './home_page';
+import { About } from './about_page';
 import { Projects } from './projects_page';
 
 export interface MainScrollProps {
@@ -8,18 +8,18 @@ export interface MainScrollProps {
 }
 
 export const MainScroll = ({ scrollTo }: MainScrollProps) => {
-    const homeRef = createRef<HTMLDivElement>();
+    const aboutRef = createRef<HTMLDivElement>();
     const projectRef = createRef<HTMLDivElement>();
     const contactRef = createRef<HTMLDivElement>();
 
     useEffect(() => {
         const handleScroll = (whatRef: String) => {
-            if (!homeRef.current || !projectRef.current || !contactRef.current) {
+            if (!aboutRef.current || !projectRef.current || !contactRef.current) {
                 return;
             }
             switch (whatRef) {
-                case 'home':
-                    homeRef.current.scrollIntoView({
+                case 'about':
+                    aboutRef.current.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start',
                     });
@@ -40,12 +40,12 @@ export const MainScroll = ({ scrollTo }: MainScrollProps) => {
         };
         // code to run on component mount
         handleScroll(scrollTo);
-    }, [homeRef, projectRef, contactRef, scrollTo]);
+    }, [aboutRef, projectRef, contactRef, scrollTo]);
 
     return (
         <div>
-            <div ref={homeRef}>
-                <Home />
+            <div ref={aboutRef}>
+                <About />
             </div>
             <div ref={projectRef}>
                 <Projects />

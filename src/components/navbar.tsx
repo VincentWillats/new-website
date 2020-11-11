@@ -6,7 +6,7 @@ export const Navbar = () => {
     return (
         <div className="navbar">
             <Link className="btn" to="/">
-                Home
+                About
             </Link>
 
             <Link className="btn" to="/projects">
