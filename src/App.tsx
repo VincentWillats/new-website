@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+import { Navbar } from './components/navbar';
+import { MainScroll } from './pages/main_scroll';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <div>
+                <Navbar />
+
+                <Switch>
+                    <Route path="/projects">
+                        <MainScroll scrollTo={'projects'} />
+                    </Route>
+                    <Route path="/contact">
+                        <MainScroll scrollTo={'contact'} />
+                    </Route>
+                    <Route path="/">
+                        <MainScroll scrollTo={'about'} />
+                    </Route>
+                </Switch>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
