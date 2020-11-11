@@ -15,7 +15,6 @@ const TextWrap = styled('div', {
     justifyContent: 'center',
     padding: '10px',
     flex: '1',
-    // minWidth: '230px',
     maxWidth: '460px',
 });
 
@@ -41,15 +40,7 @@ export const InvoiceGen = () => {
     return (
         <div className={InvoiceWrap}>
             <ImageWrap src={'/assets/invoiceGenerator.jpg'} />
-            <TextWrap
-            // width={{
-            //     initial: 'default',
-            //     bp4: 'default',
-            //     bp3: 'smaller',
-            //     bp2: 'default',
-            //     bp1: 'default',
-            // }}
-            >
+            <TextWrap>
                 <TextP>
                     This is a Windows Form application that takes the information you provide and
                     exports it as an invoice in .pdf and .xlsx format. I built this application for
