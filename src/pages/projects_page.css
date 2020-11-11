@@ -1,7 +1,49 @@
-.projects-wrap {
-    padding: 20px;
-    display: flex;
-    height: 1000px;
-    justify-content: flex-start;
-    background-color: white;
+.fade-forward-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+.fade-forward-enter-active {
+    opacity: 1;
+    transform: translateX(0%);
+}
+.fade-forward-exit {
+    opacity: 1;
+    transform: translateX(0%);
+}
+.fade-forward-exit-active {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.fade-forward-exit-active {
+    transition: opacity 1000ms, transform 500ms;
+}
+
+.fade-forward-enter-active {
+    transition: opacity 1000ms, transform 500ms;
+}
+
+.fade-backwards-enter {
+    opacity: 0;
+    transform: translateX(100%);
+}
+.fade-backwards-enter-active {
+    opacity: 1;
+    transform: translateX(0%);
+}
+.fade-backwards-exit {
+    opacity: 1;
+    transform: translateX(0%);
+}
+.fade-backwards-exit-active {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.fade-backwards-exit-active {
+    transition: opacity 500ms, transform 500ms;
+}
+
+.fade-backwards-enter-active {
+    transition: opacity 500ms, transform 500ms;
 }
