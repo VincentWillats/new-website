@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import { InvoiceGen } from '../components/projects/invoice_gen';
 import { Wapl } from '../components/projects/wapl';
+import { PocketTarkov } from '../components/projects/pocket_tarkov';
 import { styled } from '../stitches.config';
 import './projects_page.css';
 export const Projects = () => {
-    const [projects] = useState<JSX.Element[]>([<InvoiceGen />, <Wapl />]);
+    const [projects] = useState<JSX.Element[]>([<InvoiceGen />, <Wapl />, <PocketTarkov />]);
     const [index, setIndex] = useState(0);
     const [fadeDirection, setFadeDirection] = useState('fade-forward');
 
@@ -81,10 +82,12 @@ const NavButton = styled('button', {
     border: '0',
     boxShadow: '2px 2px 2px 2px rgba(0, 0, 0, 0.2)',
     transition: 'all 0.3s',
+    opacity: '0.5',
 
     ':hover': {
         transform: 'translateY(-2px)',
         boxShadow: '0 10px 25px rgba(0, 0, 0, .3)',
+        opacity: '1',
     },
 
     ':active': {
