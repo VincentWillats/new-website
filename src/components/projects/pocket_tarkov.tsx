@@ -59,7 +59,7 @@ const TheImage = styled('img', {
 
 const ImgBtnWrap = styled('div', {
     display: 'flex',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
     padding: '5px',
 });
 
@@ -69,12 +69,14 @@ const animation = css.keyframes({
 });
 
 const ImgBtn = styled('button', {
-    borderRadius: '100%',
-    padding: '5px',
-    backgroundColor: 'black',
-    color: 'gold',
+    backgroundColor: 'lightgrey',
+    color: 'black',
     border: '0',
-    transition: 'all 0.3s',
+    borderWidth: '1px',
+    borderColor: 'black',
+    marginLeft: '1px',
+    marginRight: '1px',
+    transition: 'all 0.2s',
 
     ':hover': {
         animation: `${animation} 500ms`,
@@ -82,6 +84,18 @@ const ImgBtn = styled('button', {
 
     ':active': {
         transform: 'translate(2px, 2px)',
+    },
+
+    variants: {
+        selected: {
+            true: {
+                backgroundColor: '#282a36',
+                color: 'white',
+            },
+            false: {
+                backgroundColor: 'lightgrey',
+            },
+        },
     },
 });
 
@@ -124,7 +138,11 @@ export const PocketTarkov = () => {
                 />
                 <ImgBtnWrap>
                     {imgPaths.map((_, i) => {
-                        return <ImgBtn onClick={() => setImgIndex(i)}>{i + 1}</ImgBtn>;
+                        return (
+                            <ImgBtn selected={i === imgIndex} onClick={() => setImgIndex(i)}>
+                                {i + 1}
+                            </ImgBtn>
+                        );
                     })}
                 </ImgBtnWrap>
             </ImageWrap>

@@ -13,6 +13,10 @@ export const Navbar = () => {
                 Projects
             </Link>
 
+            <Link className="btn" to="/code">
+                Code Snips
+            </Link>
+
             <Link className="btn" to="/contact">
                 Contact Me
             </Link>

@@ -45,28 +45,43 @@ const TheImage = styled('img', {
 
 const ImgBtnWrap = styled('div', {
     display: 'flex',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
     padding: '5px',
 });
 
-const scaleUp = css.keyframes({
+const animation = css.keyframes({
     '0%': { transform: 'rotate(0deg)' },
     '100%': { transform: 'rotate(360deg)' },
 });
 
 const ImgBtn = styled('button', {
-    borderRadius: '100%',
-    padding: '5px',
-    backgroundColor: 'black',
-    color: 'gold',
+    backgroundColor: 'lightgrey',
+    color: 'black',
     border: '0',
+    borderWidth: '1px',
+    borderColor: 'black',
+    marginLeft: '1px',
+    marginRight: '1px',
+    transition: 'all 0.2s',
 
     ':hover': {
-        animation: `${scaleUp} 500ms`,
+        animation: `${animation} 500ms`,
     },
 
     ':active': {
         transform: 'translate(2px, 2px)',
+    },
+
+    variants: {
+        selected: {
+            true: {
+                backgroundColor: '#282a36',
+                color: 'white',
+            },
+            false: {
+                backgroundColor: 'lightgrey',
+            },
+        },
     },
 });
 
@@ -103,7 +118,11 @@ export const Wapl = () => {
                 <TheImage src={imgPaths[imgIndex].toString()} />
                 <ImgBtnWrap>
                     {imgPaths.map((_, i) => {
-                        return <ImgBtn onClick={() => setImgIndex(i)}>{i + 1}</ImgBtn>;
+                        return (
+                            <ImgBtn selected={i === imgIndex} onClick={() => setImgIndex(i)}>
+                                {i + 1}
+                            </ImgBtn>
+                        );
                     })}
                 </ImgBtnWrap>
             </ImageWrap>

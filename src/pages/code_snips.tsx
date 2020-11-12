@@ -1,17 +1,29 @@
 import React, { useState } from 'react';
-import { CSSTransition, SwitchTransition, TransitionGroup } from 'react-transition-group';
-import { InvoiceGen } from '../components/projects/invoice_gen';
-import { Wapl } from '../components/projects/wapl';
-import { PocketTarkov } from '../components/projects/pocket_tarkov';
-import { styled } from '../stitches.config';
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
+import { GoSnip } from '../components/snips/go_snips';
+import { TsSnip } from '../components/snips/ts_snips';
+import { SQLSnip } from '../components/snips/sql_snips';
+
+import { css, styled } from '../stitches.config';
 import './inout.css';
 
-export const Projects = () => {
-    const [projects] = useState<JSX.Element[]>([<InvoiceGen />, <Wapl />, <PocketTarkov />]);
+export interface SnipProps {
+    codeNumber: number;
+}
+
+export const CodeSnips = () => {
+    const [projects] = useState<JSX.Element[]>([
+        <GoSnip codeNumber={0} />,
+        <GoSnip codeNumber={1} />,
+        <GoSnip codeNumber={2} />,
+        <GoSnip codeNumber={3} />,
+        <TsSnip codeNumber={0} />,
+        <SQLSnip codeNumber={0} />,
+    ]);
     const [index, setIndex] = useState(0);
     const [fadeDirection, setFadeDirection] = useState('fade-forward');
 
-    const nextProject = () => {
+    const nextComponent = () => {
         setFadeDirection('fade-forward');
         if (index + 1 >= projects.length) {
             setIndex(0);
@@ -20,7 +32,7 @@ export const Projects = () => {
         setIndex((prev) => prev + 1);
     };
 
-    const prevProject = () => {
+    const prevComponent = () => {
         setFadeDirection('fade-backwards');
         if (index - 1 < 0) {
             setIndex(projects.length - 1);
@@ -30,15 +42,26 @@ export const Projects = () => {
     };
 
     return (
-        <ProjectWrap>
+        <CodeSnipWrap>
             <NavButtons>
-                <NavButton onClick={() => prevProject()}>{'<'}</NavButton>
-                <NavButton onClick={() => nextProject()}>{'>'}</NavButton>
+                <NavButton onClick={() => prevComponent()}>{'<'}</NavButton>
+                <NavButton onClick={() => nextComponent()}>{'>'}</NavButton>
             </NavButtons>
             <HeaderWrap>
-                <HeaderTitle>Projects</HeaderTitle>
-                <HeaderText>Here are a few of my personal projects.</HeaderText>
+                <HeaderTitle>Code Snippets</HeaderTitle>
+                <HeaderText>A few example snips of my code.</HeaderText>
             </HeaderWrap>
+
+            <ImgBtnWrap>
+                {projects.map((_, i) => {
+                    return (
+                        <ImgBtn selected={i === index} onClick={() => setIndex(i)}>
+                            {i + 1}
+                        </ImgBtn>
+                    );
+                })}
+            </ImgBtnWrap>
+
             <SwitchTransition>
                 <CSSTransition
                     key={index}
@@ -50,11 +73,11 @@ export const Projects = () => {
                     {projects[index]}
                 </CSSTransition>
             </SwitchTransition>
-        </ProjectWrap>
+        </CodeSnipWrap>
     );
 };
 
-const ProjectWrap = styled('div', {
+const CodeSnipWrap = styled('div', {
     display: 'flex',
     maxWidth: '1280px',
     minHeight: '500px',
@@ -115,4 +138,46 @@ const HeaderTitle = styled('h1', {
 });
 const HeaderText = styled('p', {
     fontSize: '12px',
+});
+
+const ImgBtnWrap = styled('div', {
+    display: 'flex',
+    justifyContent: 'center',
+    padding: '5px',
+});
+
+const animation = css.keyframes({
+    '0%': { transform: 'rotate(0deg)' },
+    '100%': { transform: 'rotate(360deg)' },
+});
+
+const ImgBtn = styled('button', {
+    backgroundColor: 'lightgrey',
+    color: 'black',
+    border: '0',
+    borderWidth: '1px',
+    borderColor: 'black',
+    marginLeft: '1px',
+    marginRight: '1px',
+    transition: 'all 0.2s',
+
+    ':hover': {
+        animation: `${animation} 500ms`,
+    },
+
+    ':active': {
+        transform: 'translate(2px, 2px)',
+    },
+
+    variants: {
+        selected: {
+            true: {
+                backgroundColor: '#282a36',
+                color: 'white',
+            },
+            false: {
+                backgroundColor: 'lightgrey',
+            },
+        },
+    },
 });
