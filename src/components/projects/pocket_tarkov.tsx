@@ -59,7 +59,7 @@ const TheImage = styled('img', {
 
 const ImgBtnWrap = styled('div', {
     display: 'flex',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
     padding: '5px',
 });
 
@@ -69,12 +69,14 @@ const animation = css.keyframes({
 });
 
 const ImgBtn = styled('button', {
-    borderRadius: '100%',
-    padding: '5px',
-    backgroundColor: 'black',
+    backgroundColor: 'grey',
     color: 'gold',
     border: '0',
-    transition: 'all 0.3s',
+    borderWidth: '1px',
+    borderColor: 'black',
+    marginLeft: '1px',
+    marginRight: '1px',
+    transition: 'all 0.2s',
 
     ':hover': {
         animation: `${animation} 500ms`,

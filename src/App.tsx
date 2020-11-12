@@ -17,6 +17,9 @@ function App() {
                     <Route path="/contact">
                         <MainScroll scrollTo={'contact'} />
                     </Route>
+                    <Route path="/code">
+                        <MainScroll scrollTo={'code'} />
+                    </Route>
                     <Route path="/">
                         <MainScroll scrollTo={'about'} />
                     </Route>

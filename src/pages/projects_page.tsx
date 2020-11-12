@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { CSSTransition, SwitchTransition } from 'react-transition-group';
+import { CSSTransition, SwitchTransition, TransitionGroup } from 'react-transition-group';
 import { InvoiceGen } from '../components/projects/invoice_gen';
 import { Wapl } from '../components/projects/wapl';
 import { PocketTarkov } from '../components/projects/pocket_tarkov';
 import { styled } from '../stitches.config';
 import './inout.css';
+
 export const Projects = () => {
     const [projects] = useState<JSX.Element[]>([<InvoiceGen />, <Wapl />, <PocketTarkov />]);
     const [index, setIndex] = useState(0);
