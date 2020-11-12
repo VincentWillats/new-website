@@ -4,7 +4,7 @@ import { styled } from '../stitches.config';
 export const About = () => {
     return (
         <AboutWrap>
-            <HeaderWrap>
+            <HeaderWrap size={{ initial: 'default', bp880: 'small', bp540: 'smallest' }}>
                 <h1>Vincent Willats</h1>
                 <p>A Full Stack Software Developer living in Perth, Western Australia.</p>
             </HeaderWrap>
@@ -114,6 +114,26 @@ const HeaderWrap = styled('div', {
     p: {
         fontSize: '12px',
     },
+
+    variants: {
+        size: {
+            default: {
+                h1: {
+                    fontSize: '58px',
+                },
+            },
+            small: {
+                h1: {
+                    fontSize: '44px',
+                },
+            },
+            smallest: {
+                h1: {
+                    fontSize: '28px',
+                },
+            },
+        },
+    },
 });
 
 const Body = styled('div', {
@@ -162,7 +182,7 @@ const Body = styled('div', {
             padding: '10px',
             margin: '5px',
             width: '100%',
-            maxWidth: '160px',
+            maxWidth: '130px',
             borderRadius: '10px',
             backgroundColor: 'lightgrey',
             alignSelf: 'stretch',
