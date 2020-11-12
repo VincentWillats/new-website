@@ -146,7 +146,7 @@ const ImgBtnWrap = styled('div', {
     padding: '5px',
 });
 
-const scaleUp = css.keyframes({
+const animation = css.keyframes({
     '0%': { transform: 'rotate(0deg)' },
     '100%': { transform: 'rotate(360deg)' },
 });
@@ -162,7 +162,7 @@ const ImgBtn = styled('button', {
     transition: 'all 0.2s',
 
     ':hover': {
-        animation: `${scaleUp} 500ms`,
+        animation: `${animation} 500ms`,
     },
 
     ':active': {

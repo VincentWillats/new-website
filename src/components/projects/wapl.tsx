@@ -49,14 +49,14 @@ const ImgBtnWrap = styled('div', {
     padding: '5px',
 });
 
-const scaleUp = css.keyframes({
+const animation = css.keyframes({
     '0%': { transform: 'rotate(0deg)' },
     '100%': { transform: 'rotate(360deg)' },
 });
 
 const ImgBtn = styled('button', {
-    backgroundColor: 'grey',
-    color: 'gold',
+    backgroundColor: 'lightgrey',
+    color: 'black',
     border: '0',
     borderWidth: '1px',
     borderColor: 'black',
@@ -65,11 +65,23 @@ const ImgBtn = styled('button', {
     transition: 'all 0.2s',
 
     ':hover': {
-        animation: `${scaleUp} 500ms`,
+        animation: `${animation} 500ms`,
     },
 
     ':active': {
         transform: 'translate(2px, 2px)',
+    },
+
+    variants: {
+        selected: {
+            true: {
+                backgroundColor: '#282a36',
+                color: 'white',
+            },
+            false: {
+                backgroundColor: 'lightgrey',
+            },
+        },
     },
 });
 
@@ -106,7 +118,11 @@ export const Wapl = () => {
                 <TheImage src={imgPaths[imgIndex].toString()} />
                 <ImgBtnWrap>
                     {imgPaths.map((_, i) => {
-                        return <ImgBtn onClick={() => setImgIndex(i)}>{i + 1}</ImgBtn>;
+                        return (
+                            <ImgBtn selected={i === imgIndex} onClick={() => setImgIndex(i)}>
+                                {i + 1}
+                            </ImgBtn>
+                        );
                     })}
                 </ImgBtnWrap>
             </ImageWrap>

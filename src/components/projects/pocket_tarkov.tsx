@@ -69,8 +69,8 @@ const animation = css.keyframes({
 });
 
 const ImgBtn = styled('button', {
-    backgroundColor: 'grey',
-    color: 'gold',
+    backgroundColor: 'lightgrey',
+    color: 'black',
     border: '0',
     borderWidth: '1px',
     borderColor: 'black',
@@ -84,6 +84,18 @@ const ImgBtn = styled('button', {
 
     ':active': {
         transform: 'translate(2px, 2px)',
+    },
+
+    variants: {
+        selected: {
+            true: {
+                backgroundColor: '#282a36',
+                color: 'white',
+            },
+            false: {
+                backgroundColor: 'lightgrey',
+            },
+        },
     },
 });
 
@@ -126,7 +138,11 @@ export const PocketTarkov = () => {
                 />
                 <ImgBtnWrap>
                     {imgPaths.map((_, i) => {
-                        return <ImgBtn onClick={() => setImgIndex(i)}>{i + 1}</ImgBtn>;
+                        return (
+                            <ImgBtn selected={i === imgIndex} onClick={() => setImgIndex(i)}>
+                                {i + 1}
+                            </ImgBtn>
+                        );
                     })}
                 </ImgBtnWrap>
             </ImageWrap>
