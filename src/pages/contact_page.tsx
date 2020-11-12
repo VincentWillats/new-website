@@ -1,6 +1,13 @@
 import React from 'react';
-import './contact_page.css';
+import { styled } from '../stitches.config';
+
+const ContactWrap = styled('div', {
+    padding: '20px',
+    display: 'flex',
+    height: '1000px',
+    justifyContent: 'flex-start',
+});
 
 export const Contact = () => {
-    return <div className="contact-wrap">CONTACT PAGE</div>;
+    return <ContactWrap>CONTACT PAGE</ContactWrap>;
 };
