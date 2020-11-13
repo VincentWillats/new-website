@@ -52,7 +52,7 @@ export const InvoiceGen = () => {
                     invoices quickly, and it has saved me many numerous hours.
                 </p>
                 <p>
-                    Looking back on this project I would a couple of things differently as I have
+                    Looking back on this project I would do a couple of things differently as I have
                     gained a lot of knowledge since. But as a application that works and I still use
                     regularly I am happy to display it as an example of how I can build logical
                     soluitions to help myself save time.

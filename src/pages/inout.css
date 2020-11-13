@@ -25,7 +25,7 @@
 
 .fade-backwards-enter {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(99%);
 }
 .fade-backwards-enter-active {
     opacity: 1;
@@ -37,7 +37,7 @@
 }
 .fade-backwards-exit-active {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateX(-99%);
 }
 
 .fade-backwards-exit-active {

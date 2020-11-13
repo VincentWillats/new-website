@@ -53,10 +53,10 @@ const NavbarDiv = styled('div', {
     display: 'flex',
     flexDirection: 'column',
     position: 'fixed',
-    left: '10%',
-    top: '10%',
+    left: '30px',
+    top: '30px',
     zIndex: '1000',
-    transition: 'all 0.3s',
+    transition: 'all 20s',
 
     variants: {
         pos: {

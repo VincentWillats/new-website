@@ -55,7 +55,7 @@ export const Projects = () => {
 const ProjectWrap = styled('div', {
     display: 'flex',
     maxWidth: '1280px',
-    minHeight: '500px',
+    minHeight: '620px',
     justifyContent: 'flex-start',
     flexDirection: 'column',
     position: 'relative',

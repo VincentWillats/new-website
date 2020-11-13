@@ -74,7 +74,7 @@ export const About = () => {
                         Certificates:
                         <ul>
                             <li>Cert IV in Software Development</li>
-                            <li>Full Divers License</li>
+                            <li>Full Drivers License</li>
                             <li>Gaming Operator License</li>
                         </ul>
                     </p>
