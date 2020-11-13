@@ -48,7 +48,9 @@ export const CodeSnips = () => {
                 <NavButton onClick={() => nextComponent()}>{'>'}</NavButton>
             </NavButtons>
             <HeaderWrap>
-                <HeaderTitle>Code Snippets</HeaderTitle>
+                <HeaderTitle size={{ initial: 'default', bp880: 'small', bp540: 'smallest' }}>
+                    Code Snippets
+                </HeaderTitle>
                 <HeaderText>A few example snips of my code.</HeaderText>
             </HeaderWrap>
 
@@ -85,6 +87,7 @@ const CodeSnipWrap = styled('div', {
     flexDirection: 'column',
     position: 'relative',
     margin: 'auto',
+    paddingBottom: '20px',
 });
 
 const NavButtons = styled('div', {
@@ -135,6 +138,14 @@ const HeaderWrap = styled('div', {
 const HeaderTitle = styled('h1', {
     fontSize: '40px',
     fontStyle: 'normal',
+
+    variants: {
+        size: {
+            default: { fontSize: '40px' },
+            small: { fontSize: '30px' },
+            smallest: { fontSize: '24px' },
+        },
+    },
 });
 const HeaderText = styled('p', {
     fontSize: '12px',

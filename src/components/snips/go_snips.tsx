@@ -23,12 +23,12 @@ export const GoSnip = ({ codeNumber }: SnipProps) => {
 
 const Block = styled('div', {
     margin: 'auto',
-    width: '65%',
+    width: '80%',
 
     variants: {
         width: {
             default: {
-                width: '65%',
+                width: '80%',
             },
             small: {
                 width: '95%',

@@ -26,12 +26,12 @@ const Header = styled('h3', {
 
 const Block = styled('div', {
     margin: 'auto',
-    maxWidth: '65%',
+    maxWidth: '80%',
 
     variants: {
         maxWidth: {
             default: {
-                maxWidth: '65%',
+                maxWidth: '80%',
             },
             small: {
                 maxWidth: '95%',
@@ -41,14 +41,14 @@ const Block = styled('div', {
 });
 
 const code01 = ` CREATE TABLE quiz(
-   uid UUID NOT NULL PRIMARY KEY DEFAULT gen_random_uuid (),
-   name VARCHAR (255) UNIQUE NOT NULL,
-   public Boolean DEFAULT FALSE,
-   created_by UUID,
-   owned_by UUID,
-   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-   last_active_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-   deleted_at TIMESTAMP,
+            uid UUID NOT NULL PRIMARY KEY DEFAULT gen_random_uuid (),
+            name VARCHAR (255) UNIQUE NOT NULL,
+            public Boolean DEFAULT FALSE,
+            created_by UUID,
+            owned_by UUID,
+            created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+            last_active_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+            deleted_at TIMESTAMP,
   CONSTRAINT fk_created_by
    	FOREIGN KEY(created_by)
    		REFERENCES users(uid),

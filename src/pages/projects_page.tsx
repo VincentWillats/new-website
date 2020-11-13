@@ -36,7 +36,9 @@ export const Projects = () => {
                 <NavButton onClick={() => nextProject()}>{'>'}</NavButton>
             </NavButtons>
             <HeaderWrap>
-                <HeaderTitle>Projects</HeaderTitle>
+                <HeaderTitle size={{ initial: 'default', bp880: 'small', bp540: 'smallest' }}>
+                    Projects
+                </HeaderTitle>
                 <HeaderText>Here are a few of my personal projects.</HeaderText>
             </HeaderWrap>
             <SwitchTransition>
@@ -62,6 +64,7 @@ const ProjectWrap = styled('div', {
     flexDirection: 'column',
     position: 'relative',
     margin: 'auto',
+    padding: '10px',
 });
 
 const NavButtons = styled('div', {
@@ -112,6 +115,14 @@ const HeaderWrap = styled('div', {
 const HeaderTitle = styled('h1', {
     fontSize: '40px',
     fontStyle: 'normal',
+
+    variants: {
+        size: {
+            default: { fontSize: '40px' },
+            small: { fontSize: '30px' },
+            smallest: { fontSize: '24px' },
+        },
+    },
 });
 const HeaderText = styled('p', {
     fontSize: '12px',
