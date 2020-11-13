@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Navbar } from './components/navbar';
 import { Footer } from './components/footer';
@@ -6,6 +6,9 @@ import { MainScroll } from './pages/main_scroll';
 import { PrivacyPage } from './pages/privacy_page';
 
 function App() {
+    useEffect(() => {
+        document.title = 'Vincent Willats';
+    }, []);
     return (
         <Router>
             <div>

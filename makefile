@@ -3,7 +3,7 @@ PROJECT_NAME= my-website
 PROJECT_ROOT= ./
 
 WEB_INDEX= ${PROJECT_ROOT}/src/index.tsx
-SSH_CONN= vinnie@coffeeculture.cafe
+SSH_CONN= vinnie@willats.tech
 
 .PHONY: clean
 clean:
