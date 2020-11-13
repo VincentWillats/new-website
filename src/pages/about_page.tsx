@@ -73,8 +73,8 @@ export const About = () => {
                         Certificates:
                         <ul>
                             <li>Cert IV in Software Development</li>
-                            <li>Full drivers license</li>
-                            <li>Gaming Operator Certificate</li>
+                            <li>Full Divers License</li>
+                            <li>Gaming Operator License</li>
                         </ul>
                     </p>
                 </div>
@@ -194,22 +194,3 @@ const Body = styled('div', {
         },
     },
 });
-
-// /* media queries */
-// @media only screen and (max-width: 888px) {
-
-//     .header-wrap > h1 {
-//         font-size: 44px;
-//     }
-// }
-
-// /* media queries */
-// @media only screen and (max-width: 540px) {
-//     .text-wrap > p {
-//         max-width: 100%;
-//         padding-left: 50px;
-//     }
-//     .header-wrap > h1 {
-//         font-size: 28px;
-//     }
-// }

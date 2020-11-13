@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './App.css';
 import { Navbar } from './components/navbar';
+import { Footer } from './components/footer';
 import { MainScroll } from './pages/main_scroll';
+import { PrivacyPage } from './pages/privacy_page';
 
 function App() {
     return (
@@ -11,6 +12,9 @@ function App() {
                 <Navbar />
 
                 <Switch>
+                    <Route path="/privacy">
+                        <PrivacyPage />
+                    </Route>
                     <Route path="/projects">
                         <MainScroll scrollTo={'projects'} />
                     </Route>
@@ -24,6 +28,7 @@ function App() {
                         <MainScroll scrollTo={'about'} />
                     </Route>
                 </Switch>
+                <Footer />
             </div>
         </Router>
     );
