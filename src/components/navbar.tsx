@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { styled } from '../stitches.config';
-import './navbar.css';
 
 export const Navbar = () => {
     return (
-        <div className="navbar">
+        <NavbarDiv pos={{ initial: 'default', bp540: 'small' }}>
             <Link className="btn" to="/">
                 <NavBtn initial={'A'} full={'About'} />
             </Link>
@@ -29,7 +28,7 @@ export const Navbar = () => {
             <a href={'mailto:vincent@willats.tech'} target="_blank" rel="noopener noreferrer">
                 <Logo src={'/assets/iconfinder_112-gmail_email_mail_4202011.png'} />
             </a>
-        </div>
+        </NavbarDiv>
     );
 };
 
@@ -53,6 +52,29 @@ const NavBtn = ({ initial, full }: NavBtnProps) => {
         </P>
     );
 };
+
+const NavbarDiv = styled('div', {
+    display: 'flex',
+    flexDirection: 'column',
+    position: 'fixed',
+    left: '10%',
+    top: '10%',
+    zIndex: '1000',
+    transition: 'all 0.3s',
+
+    variants: {
+        pos: {
+            default: {
+                left: '10%',
+                top: '10%',
+            },
+            small: {
+                left: '1%',
+                top: '1%',
+            },
+        },
+    },
+});
 
 const Logo = styled('img', {
     margin: '6px',
