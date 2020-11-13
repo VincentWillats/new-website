@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { css, styled } from '../../stitches.config';
+import { ImgButtons } from '../img_buttons';
 
 const TarkovWrap = css('div', {
     display: 'flex',
@@ -57,48 +58,6 @@ const TheImage = styled('img', {
     },
 });
 
-const ImgBtnWrap = styled('div', {
-    display: 'flex',
-    justifyContent: 'center',
-    padding: '5px',
-});
-
-const animation = css.keyframes({
-    '0%': { transform: 'rotate(0deg)' },
-    '100%': { transform: 'rotate(360deg)' },
-});
-
-const ImgBtn = styled('button', {
-    backgroundColor: 'lightgrey',
-    color: 'black',
-    border: '0',
-    borderWidth: '1px',
-    borderColor: 'black',
-    marginLeft: '1px',
-    marginRight: '1px',
-    transition: 'all 0.2s',
-
-    ':hover': {
-        animation: `${animation} 500ms`,
-    },
-
-    ':active': {
-        transform: 'translate(2px, 2px)',
-    },
-
-    variants: {
-        selected: {
-            true: {
-                backgroundColor: '#282a36',
-                color: 'white',
-            },
-            false: {
-                backgroundColor: 'lightgrey',
-            },
-        },
-    },
-});
-
 export const PocketTarkov = () => {
     const [imgIndex, setImgIndex] = useState(0);
     const imgPaths: String[] = [
@@ -136,15 +95,11 @@ export const PocketTarkov = () => {
                     }}
                     src={imgPaths[imgIndex].toString()}
                 />
-                <ImgBtnWrap>
-                    {imgPaths.map((_, i) => {
-                        return (
-                            <ImgBtn selected={i === imgIndex} onClick={() => setImgIndex(i)}>
-                                {i + 1}
-                            </ImgBtn>
-                        );
-                    })}
-                </ImgBtnWrap>
+                <ImgButtons
+                    listLength={imgPaths.length}
+                    selectedIndex={imgIndex}
+                    setIndex={setImgIndex}
+                />
             </ImageWrap>
         </div>
     );

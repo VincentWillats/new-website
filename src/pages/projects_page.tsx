@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import { InvoiceGen } from '../components/projects/invoice_gen';
 import { Wapl } from '../components/projects/wapl';
+import { SideNavButtons } from '../components/sidenav_buttons';
 import { PocketTarkov } from '../components/projects/pocket_tarkov';
 import { styled } from '../stitches.config';
+import { Header } from '../components/header';
+
 import './inout.css';
 
 export const Projects = () => {
@@ -31,16 +34,9 @@ export const Projects = () => {
 
     return (
         <ProjectWrap>
-            <NavButtons>
-                <NavButton onClick={() => prevProject()}>{'<'}</NavButton>
-                <NavButton onClick={() => nextProject()}>{'>'}</NavButton>
-            </NavButtons>
-            <HeaderWrap>
-                <HeaderTitle size={{ initial: 'default', bp880: 'small', bp540: 'smallest' }}>
-                    Projects
-                </HeaderTitle>
-                <HeaderText>Here are a few of my personal projects.</HeaderText>
-            </HeaderWrap>
+            <SideNavButtons prevButton={prevProject} nextButton={nextProject} />
+            <Header header={'Projects'} subheader={'Here are a few of my personal projects.'} />
+
             <SwitchTransition>
                 <CSSTransition
                     key={index}
@@ -65,65 +61,4 @@ const ProjectWrap = styled('div', {
     position: 'relative',
     margin: 'auto',
     padding: '10px',
-});
-
-const NavButtons = styled('div', {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'space-between',
-    position: 'absolute',
-    padding: '1rem',
-    top: '400px',
-    transform: 'translateY(-50%)',
-    zIndex: '999',
-});
-
-const NavButton = styled('button', {
-    backgroundColor: 'gainsboro',
-    borderRadius: '100%',
-    width: '60px',
-    height: '60px',
-    border: '0',
-    boxShadow: '2px 2px 2px 2px rgba(0, 0, 0, 0.2)',
-    transition: 'all 0.3s',
-    opacity: '0.5',
-
-    ':hover': {
-        transform: 'translateY(-2px)',
-        boxShadow: '0 10px 25px rgba(0, 0, 0, .3)',
-        opacity: '1',
-    },
-
-    ':active': {
-        transform: 'translateY(4px)',
-    },
-});
-
-const HeaderWrap = styled('div', {
-    width: '70%',
-    height: 'auto',
-    backgroundColor: 'lightgrey',
-    borderRadius: '10px',
-    textAlign: 'center',
-    padding: '10px 0',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    marginTop: '10px',
-    marginBottom: '10px',
-    boxShadow: '5px 5px 15px 5px rgba(0, 0, 0, 0.53)',
-});
-const HeaderTitle = styled('h1', {
-    fontSize: '40px',
-    fontStyle: 'normal',
-
-    variants: {
-        size: {
-            default: { fontSize: '40px' },
-            small: { fontSize: '30px' },
-            smallest: { fontSize: '24px' },
-        },
-    },
-});
-const HeaderText = styled('p', {
-    fontSize: '12px',
 });

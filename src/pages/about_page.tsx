@@ -1,13 +1,14 @@
 import React from 'react';
 import { styled } from '../stitches.config';
+import { Header } from '../components/header';
 
 export const About = () => {
     return (
         <AboutWrap>
-            <HeaderWrap size={{ initial: 'default', bp880: 'small', bp540: 'smallest' }}>
-                <h1>Vincent Willats</h1>
-                <p>A Full Stack Software Developer living in Perth, Western Australia.</p>
-            </HeaderWrap>
+            <Header
+                header={'Vincent Willats'}
+                subheader={'A Full Stack Software Developer living in Perth, Western Australia.'}
+            />
 
             <Body size={{ initial: 'default', bp1010: 'smaller', bp910: 'default' }}>
                 <img src={'/assets/IMG_4495.JPG'} alt={'Failed to load.'} />
@@ -94,48 +95,6 @@ const AboutWrap = styled('div', {
     alignItems: 'flex-start',
 });
 
-const HeaderWrap = styled('div', {
-    width: '90%',
-    height: 'auto',
-    backgroundColor: 'lightgrey',
-    borderRadius: '10px',
-    textAlign: 'center',
-    padding: '10px 0',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    marginTop: '10px',
-    marginBottom: '10px',
-    boxShadow: '5px 5px 15px 5px rgba(0, 0, 0, 0.53)',
-
-    h1: {
-        fontSize: '58px',
-        fontStyle: 'normal',
-    },
-    p: {
-        fontSize: '12px',
-    },
-
-    variants: {
-        size: {
-            default: {
-                h1: {
-                    fontSize: '58px',
-                },
-            },
-            small: {
-                h1: {
-                    fontSize: '44px',
-                },
-            },
-            smallest: {
-                h1: {
-                    fontSize: '28px',
-                },
-            },
-        },
-    },
-});
-
 const Body = styled('div', {
     padding: '10px',
     display: 'flex',
@@ -184,7 +143,7 @@ const Body = styled('div', {
             width: '100%',
             maxWidth: '130px',
             borderRadius: '10px',
-            backgroundColor: 'lightgrey',
+            backgroundColor: '$secondary',
             alignSelf: 'stretch',
             boxShadow: '3px 3px 10px 5px rgba(0, 0, 0, 0.21)',
             ul: {
