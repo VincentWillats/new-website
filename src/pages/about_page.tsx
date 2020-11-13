@@ -10,7 +10,7 @@ export const About = () => {
             </HeaderWrap>
 
             <Body size={{ initial: 'default', bp1010: 'smaller', bp910: 'default' }}>
-                <img src={'/assets/IMG_4495.JPG'} />
+                <img src={'/assets/IMG_4495.JPG'} alt={'Failed to load.'} />
                 <div>
                     <p>
                         Proficient in:
