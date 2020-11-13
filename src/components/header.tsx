@@ -18,21 +18,25 @@ export const Header = ({ header, subheader }: HeaderProps) => {
 const HeaderWrap = styled('div', {
     width: '90%',
     height: 'auto',
+    marginTop: '10px',
+    marginBottom: '14px',
     backgroundColor: '$main',
     borderRadius: '10px',
     textAlign: 'center',
     padding: '10px 0',
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: '10px',
-    marginBottom: '10px',
     boxShadow: '5px 5px 15px 5px rgba(0, 0, 0, 0.53)',
 
     h1: {
+        marginTop: '0px',
+        marginBottom: '0px',
         fontSize: '58px',
         fontStyle: 'normal',
     },
     p: {
+        marginTop: '0px',
+        marginBottom: '0px',
         fontSize: '12px',
     },
 

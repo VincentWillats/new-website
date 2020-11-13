@@ -7,9 +7,10 @@ export const { styled, css } = createStyled({
         colors: {
             $background: '#B8D8D8',
             $secondary: '#7A9E9F',
-            $main: '#4F6367',
-            $accent02: '#EEF5DB',
+            $main: '#627B7F',
             $accent01: '#FE5F55',
+            $accent02: '#EEF5DB',
+            $accent03: '#282a36',
         },
     },
     breakpoints: {

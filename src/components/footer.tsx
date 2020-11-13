@@ -8,8 +8,12 @@ export const Footer = () => {
             <p>
                 © 2020 - VincentWillatsWebsite - <Link to="/privacy">Privacy</Link>
             </p>
-            <p>Mobile - 0478147822</p>
-            <p>Email  - Vincent@Willats.tech</p>
+            <p>
+                Mobile: <a href="tel:+61478147822">+61 478147822</a>
+            </p>
+            <p>
+                Email: <a href="mailto:vincent@willats.tech">Vincent@Willats.tech</a>
+            </p>
         </FooterDiv>
     );
 };

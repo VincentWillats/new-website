@@ -32,16 +32,18 @@ const animation = css.keyframes({
 });
 
 const ImgBtn = styled('button', {
-    backgroundColor: 'lightgrey',
+    backgroundColor: '$secondary',
     color: 'black',
     border: '0',
     borderWidth: '1px',
+    borderRadius: '3px',
     borderColor: 'black',
     marginLeft: '1px',
     marginRight: '1px',
     transition: 'all 0.2s',
 
     ':hover': {
+        backgroundColor: '$accent02',
         animation: `${animation} 500ms`,
     },
 
@@ -52,11 +54,10 @@ const ImgBtn = styled('button', {
     variants: {
         selected: {
             true: {
-                backgroundColor: '#282a36',
-                color: 'white',
+                backgroundColor: '$accent02',
             },
             false: {
-                backgroundColor: 'lightgrey',
+                backgroundColor: '&secondary',
             },
         },
     },

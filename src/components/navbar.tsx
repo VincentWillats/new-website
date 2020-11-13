@@ -5,19 +5,12 @@ import { styled } from '../stitches.config';
 export const Navbar = () => {
     return (
         <NavbarDiv pos={{ initial: 'default', bp540: 'small' }}>
-            <Link className="btn" to="/">
-                <NavBtn initial={'A'} full={'About'} />
-            </Link>
-            <Link className="btn" to="/projects">
-                <NavBtn initial={'P'} full={'Projects'} />
-            </Link>
-            <Link className="btn" to="/code">
-                <NavBtn initial={'C'} full={'Code'} />
-            </Link>
+            <NavBtn initial={'A'} full={'About'} to="/" />
+            <NavBtn initial={'P'} full={'Projects'} to="/projects" />
+            <NavBtn initial={'C'} full={'Code'} to={'/code'} />
             <a href={'https://github.com/VincentWillats'} target="_blank" rel="noopener noreferrer">
                 <Logo src={'/assets/GitHub-Mark-Light-120px-plus.png'} />
             </a>
-
             <a
                 href={'https://www.linkedin.com/in/vincentwillats/'}
                 target="_blank"
@@ -35,21 +28,24 @@ export const Navbar = () => {
 interface NavBtnProps {
     initial: string;
     full: string;
+    to: string;
 }
 
-const NavBtn = ({ initial, full }: NavBtnProps) => {
+const NavBtn = ({ initial, full, to }: NavBtnProps) => {
     const [text, setText] = useState<string>(initial);
     return (
-        <P
-            onMouseOver={() => {
-                setText(full);
-            }}
-            onMouseLeave={() => {
-                setText(initial);
-            }}
-        >
-            {text}
-        </P>
+        <Link to={to} style={{ textDecoration: 'none' }}>
+            <P
+                onMouseOver={() => {
+                    setText(full);
+                }}
+                onMouseLeave={() => {
+                    setText(initial);
+                }}
+            >
+                {text}
+            </P>
+        </Link>
     );
 };
 
@@ -93,21 +89,24 @@ const P = styled('p', {
     fontSize: '40px',
     color: 'black',
 
-    borderColor: 'black',
+    borderColor: '$accent02',
     borderWidth: '1px',
     borderRadius: '10px',
     borderStyle: 'solid',
+
+    fontStyle: 'normal',
 
     width: '45px',
     overflow: 'hidden',
 
     transition: 'all 0.5s',
+    boxShadow: '2px 2px 5px 2px $accent03',
 
     opacity: '0.5',
 
     ':hover': {
         opacity: '1',
         width: 'calc(100% - 16px)',
-        backgroundColor: 'lightgrey',
+        backgroundColor: '$secondary',
     },
 });

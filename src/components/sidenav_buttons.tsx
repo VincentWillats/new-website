@@ -31,14 +31,15 @@ export const NavButtons = styled('div', {
         width: '60px',
         height: '60px',
         border: '0',
-        boxShadow: '2px 2px 2px 2px rgba(0, 0, 0, 0.2)',
+        boxShadow: '2px 2px 5px 2px $accent03',
+
         transition: 'all 0.3s',
-        opacity: '0.5',
+        opacity: '0.4',
 
         ':hover': {
             transform: 'translateY(-2px)',
             boxShadow: '0 10px 25px rgba(0, 0, 0, .3)',
-            opacity: '1',
+            opacity: '0.7',
         },
 
         ':active': {
