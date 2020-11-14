@@ -40,7 +40,7 @@ const Block = styled('div', {
     },
 });
 
-const code01 = ` CREATE TABLE quiz(
+const code01 = `CREATE TABLE quiz(
             uid UUID NOT NULL PRIMARY KEY DEFAULT gen_random_uuid (),
             name VARCHAR (255) UNIQUE NOT NULL,
             public Boolean DEFAULT FALSE,

@@ -66,7 +66,7 @@ export const CodeSnips = () => {
 const CodeSnipWrap = styled('div', {
     display: 'flex',
     maxWidth: '1280px',
-    minHeight: '500px',
+    minHeight: '810px',
     justifyContent: 'flex-start',
     flexDirection: 'column',
     position: 'relative',

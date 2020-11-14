@@ -6,8 +6,8 @@ export const { styled, css } = createStyled({
     tokens: {
         colors: {
             $background: '#B8D8D8',
-            $secondary: '#7A9E9F',
-            $main: '#627B7F',
+            $secondary: '#9bcccc',
+            $main: '#a0baba',
             $accent01: '#FE5F55',
             $accent02: '#EEF5DB',
             $accent03: '#282a36',

@@ -67,7 +67,7 @@ export const About = () => {
                             <li>Macaw owner</li>
                             <li>I'm 5' 10"</li>
                             <li>Really 5' 7"</li>
-                            <li>Can eat a pizze slice in seconds</li>
+                            <li>Can eat a pizza slice in seconds</li>
                         </ul>
                     </p>
                     <p>
@@ -138,16 +138,19 @@ const Body = styled('div', {
 
         p: {
             fontSize: '14px',
-            padding: '10px',
-            margin: '5px',
+            // padding: 'px',
+            margin: '14px',
             width: '100%',
-            maxWidth: '130px',
-            borderRadius: '10px',
+            maxWidth: '110px',
+            borderRadius: '2px',
             backgroundColor: '$secondary',
             alignSelf: 'stretch',
-            boxShadow: '3px 3px 10px 5px rgba(0, 0, 0, 0.21)',
+
+            boxShadow: '0px 0px 10px 10px $secondary',
             ul: {
                 padding: '0px',
+                borderRadius: '2px',
+
                 paddingLeft: '20px',
             },
         },

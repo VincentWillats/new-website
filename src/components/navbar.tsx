@@ -56,7 +56,7 @@ const NavbarDiv = styled('div', {
     left: '30px',
     top: '30px',
     zIndex: '1000',
-    transition: 'all 20s',
+    transition: 'all 0.8s',
 
     variants: {
         pos: {
@@ -85,7 +85,7 @@ const Logo = styled('img', {
 
 const P = styled('p', {
     padding: '8px',
-    margin: '6px',
+    margin: '4px',
     fontSize: '40px',
     color: 'black',
 
@@ -106,7 +106,7 @@ const P = styled('p', {
 
     ':hover': {
         opacity: '1',
-        width: 'calc(100% - 16px)',
+        width: 'calc(100% - 8px)',
         backgroundColor: '$secondary',
     },
 });

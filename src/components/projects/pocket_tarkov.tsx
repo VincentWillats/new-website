@@ -7,6 +7,7 @@ const TarkovWrap = css('div', {
     flexDirection: 'row',
     justifyContent: 'center',
     flexWrap: 'wrap',
+    marginTop: '15px',
 });
 
 const TextWrap = styled('div', {

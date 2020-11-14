@@ -47,12 +47,15 @@ export const GetQuiz = async (quizUID: string): Promise<QuizQuestionsAndAnswers>
 	try {
 		const response = await fetch(\`/api/quizzes/getquiz?id=\${quizUID}\`, {
 			method: "GET",
-		})
+        })
+        
 		if (response.status !== 200) {
 			const responJson: ApiError = await response.json()
 			throw new Error(responJson.friendlyError)
-		}
-		let quiz: QuizQuestionsAndAnswers = await response.json()
+        }
+        
+        let quiz: QuizQuestionsAndAnswers = await response.json()
+        
 		return quiz
 	} catch (err) {
 		throw new Error(err.message)

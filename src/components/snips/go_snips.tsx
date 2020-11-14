@@ -64,8 +64,7 @@ func (s *Container) StartServe(port string) error {
 		return err
 	}
 	return nil
-}
-`;
+}`;
 
 const code02 = `// WithError is our middleware error handling, wraps all api handlers
 func WithError(next HandlerFuncWithError) http.HandlerFunc {
@@ -89,24 +88,26 @@ func WithError(next HandlerFuncWithError) http.HandlerFunc {
 		return
 	}
 	return fn
-}
-`;
+}`;
 
 const code03 = `// GetCoffeeShopSearchResultsHandler handles a request to search and return coffeeshops
 func (s *Container) GetCoffeeShopSearchResultsHandler(w http.ResponseWriter, req *http.Request) (int, error) {
 	searchParms := &types.CoffeeShopSearchParams{}
 
-	err := json.NewDecoder(req.Body).Decode(searchParms) // decode body into search param struct
+	// decode body into search param struct
+	err := json.NewDecoder(req.Body).Decode(searchParms) 
 	if err != nil {
 		return http.StatusBadRequest, NewError("Invalid format.", err.Error())
 	}
 
-	returnedShops, err := s.DB.GetCoffeeShopSearchResults(searchParms) // Pass search params to func to get search results
+	// Pass search params to func to get search results
+	returnedShops, err := s.DB.GetCoffeeShopSearchResults(searchParms) 
 	if err != nil {
 		return http.StatusInternalServerError, NewError("Failed to get shops.", err.Error())
 	}
 
-	err = json.NewEncoder(w).Encode(returnedShops) // encode and return results as json
+	 // encode and return results as json
+	err = json.NewEncoder(w).Encode(returnedShops)
 	if err != nil {
 		return http.StatusBadRequest, NewError("Failed to get shops.", err.Error())
 	}
@@ -125,9 +126,11 @@ func (db *Database) GetShopRatings(shop *CoffeeShop) error {
 						COALESCE(round(avg(overall)::numeric, 2), -1) as overall
 				FROM coffeeshopratings 
 				WHERE shop_uid = $1\`
+
 	err := db.DB.Get(&shop.Ratings, query, shop.ShopUID)
 	if err != nil {
 		return err
 	}
+
 	return nil
 }`;

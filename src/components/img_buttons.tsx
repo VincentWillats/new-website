@@ -23,7 +23,7 @@ export const ImgButtons = ({ listLength, selectedIndex, setIndex }: ImgButtonsPr
 const ImgBtnWrap = styled('div', {
     display: 'flex',
     justifyContent: 'center',
-    padding: '5px',
+    padding: '10px',
 });
 
 const animation = css.keyframes({

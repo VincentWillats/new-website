@@ -6,7 +6,7 @@ export const Footer = () => {
     return (
         <FooterDiv>
             <p>
-                © 2020 - VincentWillatsWebsite - <Link to="/privacy">Privacy</Link>
+                © 2020 - Willats.Tech - <Link to="/privacy">Privacy</Link>
             </p>
             <p>
                 Mobile: <a href="tel:+61478147822">+61 478147822</a>

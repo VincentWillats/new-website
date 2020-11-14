@@ -33,8 +33,12 @@ export const NavButtons = styled('div', {
         border: '0',
         boxShadow: '2px 2px 5px 2px $accent03',
 
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        borderColor: 'black',
+
         transition: 'all 0.3s',
-        opacity: '0.4',
+        opacity: '0.5',
 
         ':hover': {
             transform: 'translateY(-2px)',
