@@ -72,11 +72,11 @@ func WithError(next HandlerFuncWithError) http.HandlerFunc {
 		code, err := next(w, r)
 		// If error
 		if err != nil {
-			customerErr, ok := err.(*Error) // convert to customer error type
+			customErr, ok := err.(*Error) // convert to customErr error type
 			if !ok {
-				panic("Can't convert err to customer err!")
+				panic("Can't convert err to customErr err!")
 			}
-			fmt.Println(customerErr.DevError)
+			fmt.Println(customErr.DevError)
 			json, err := json.Marshal(err) // convert error to json
 			if err != nil {
 				panic("Can't marshall error to json")

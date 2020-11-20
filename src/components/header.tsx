@@ -24,7 +24,7 @@ const HeaderWrap = styled('div', {
 
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: '10px',
+    marginTop: '30px',
     marginBottom: '20px',
 
     backgroundColor: '$main',
